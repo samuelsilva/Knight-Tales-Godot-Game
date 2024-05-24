@@ -1,0 +1,95 @@
+[gd_scene load_steps=3 format=3 uid="uid://l8gpy8ny31yq"]
+
+[ext_resource type="Texture2D" uid="uid://7lwc5rf77lt3" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_emper"]
+[ext_resource type="PackedScene" uid="uid://ch3ptsipbsp01" path="res://player/player.tscn" id="2_5hujo"]
+
+[node name="TestPlayer" type="Node2D"]
+
+[node name="WarriorBlue" type="Sprite2D" parent="."]
+position = Vector2(1902, 858)
+texture = ExtResource("1_emper")
+
+[node name="Label" type="Label" parent="WarriorBlue"]
+offset_left = 630.0
+offset_top = -669.0
+offset_right = 670.0
+offset_bottom = -646.0
+text = "IDLE
+"
+
+[node name="Label9" type="Label" parent="WarriorBlue"]
+offset_left = -513.0
+offset_top = -899.0
+offset_right = -395.0
+offset_bottom = -876.0
+scale = Vector2(8.87376, 6.16227)
+text = "0   1   2   3   4   5
+"
+
+[node name="Label10" type="Label" parent="WarriorBlue"]
+offset_left = -690.0
+offset_top = -763.0
+offset_right = -680.0
+offset_bottom = -555.0
+scale = Vector2(7.9715, 7.32048)
+text = "0   1   2   3   4   5   6  7
+"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="WarriorBlue"]
+offset_left = 636.0
+offset_top = -499.0
+offset_right = 676.0
+offset_bottom = -476.0
+text = "run
+"
+
+[node name="Label3" type="Label" parent="WarriorBlue"]
+offset_left = 627.0
+offset_top = -296.0
+offset_right = 731.0
+offset_bottom = -273.0
+text = "Attack_side_1"
+
+[node name="Label4" type="Label" parent="WarriorBlue"]
+offset_left = 628.0
+offset_top = -110.0
+offset_right = 732.0
+offset_bottom = -87.0
+text = "Attack_side_2
+"
+
+[node name="Label5" type="Label" parent="WarriorBlue"]
+offset_left = 640.0
+offset_top = 80.0
+offset_right = 756.0
+offset_bottom = 103.0
+text = "Attack_down_1"
+
+[node name="Label6" type="Label" parent="WarriorBlue"]
+offset_left = 633.0
+offset_top = 276.0
+offset_right = 749.0
+offset_bottom = 299.0
+text = "Attack_down_2
+"
+
+[node name="Label7" type="Label" parent="WarriorBlue"]
+offset_left = 636.0
+offset_top = 471.0
+offset_right = 752.0
+offset_bottom = 494.0
+text = "Attack_up_1
+"
+
+[node name="Label8" type="Label" parent="WarriorBlue"]
+offset_left = 633.0
+offset_top = 659.0
+offset_right = 749.0
+offset_bottom = 682.0
+text = "Attack_up_2
+"
+
+[node name="Player" parent="." instance=ExtResource("2_5hujo")]
+position = Vector2(352, 212)
+script = null
