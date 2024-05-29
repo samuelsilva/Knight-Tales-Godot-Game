@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://l8gpy8ny31yq"]
+[gd_scene load_steps=4 format=3 uid="uid://l8gpy8ny31yq"]
 
 [ext_resource type="Texture2D" uid="uid://7lwc5rf77lt3" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_emper"]
 [ext_resource type="PackedScene" uid="uid://ch3ptsipbsp01" path="res://player/player.tscn" id="2_5hujo"]
+[ext_resource type="PackedScene" uid="uid://ckb5mdgjqth52" path="res://enemies/pawn.tscn" id="3_cbpmr"]
 
 [node name="TestPlayer" type="Node2D"]
 
@@ -92,4 +93,18 @@ text = "Attack_up_2
 
 [node name="Player" parent="." instance=ExtResource("2_5hujo")]
 position = Vector2(352, 212)
-script = null
+
+[node name="Player2" parent="." instance=ExtResource("2_5hujo")]
+position = Vector2(334, 350)
+
+[node name="Pawn" parent="." instance=ExtResource("3_cbpmr")]
+position = Vector2(122, 294)
+
+[node name="Pawn2" parent="." instance=ExtResource("3_cbpmr")]
+position = Vector2(392, 506)
+
+[node name="Pawn3" parent="." instance=ExtResource("3_cbpmr")]
+position = Vector2(906, 536)
+
+[node name="Pawn4" parent="." instance=ExtResource("3_cbpmr")]
+position = Vector2(630, 520)

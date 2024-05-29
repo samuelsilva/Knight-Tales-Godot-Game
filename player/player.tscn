@@ -1,7 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://ch3ptsipbsp01"]
+[gd_scene load_steps=20 format=3 uid="uid://ch3ptsipbsp01"]
 
 [ext_resource type="Texture2D" uid="uid://7lwc5rf77lt3" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_bk30x"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_k7eym"]
+[ext_resource type="PackedScene" uid="uid://dfobr8sv5w8pi" path="res://misc/ritual.tscn" id="2_tfcqa"]
+[ext_resource type="PackedScene" uid="uid://by5xvkfh28s2t" path="res://misc/big_skull.tscn" id="2_wvdad"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_huqf2"]
 radius = 17.0
@@ -37,6 +39,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4), Vector2i(4, 4), Vector2i(5, 4)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"deal_damage_to_enemies"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_rtwsb"]
 resource_name = "attack_down_2"
@@ -52,6 +68,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 5), Vector2i(1, 5), Vector2i(2, 5), Vector2i(3, 5), Vector2i(4, 5), Vector2i(5, 5)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"deal_damage_to_enemies"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_d5quw"]
@@ -69,10 +99,25 @@ tracks/0/keys = {
 "update": 1,
 "values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2), Vector2i(4, 2), Vector2i(5, 2)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"deal_damage_to_enemies"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_l262s"]
 resource_name = "attack_side_2"
 length = 0.6
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -84,6 +129,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3), Vector2i(4, 3), Vector2i(5, 3)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"deal_damage_to_enemies"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_oxo3w"]
@@ -101,6 +160,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [Vector2i(0, 6), Vector2i(1, 6), Vector2i(2, 6), Vector2i(3, 6), Vector2i(4, 6), Vector2i(5, 6)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"deal_damage_to_enemies"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_dixge"]
 resource_name = "attack_up_2"
@@ -116,6 +189,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 7), Vector2i(1, 7), Vector2i(2, 7), Vector2i(3, 7), Vector2i(4, 7), Vector2i(5, 7)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"deal_damage_to_enemies"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_8kui0"]
@@ -165,8 +252,23 @@ _data = {
 "run": SubResource("Animation_7udfk")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_blepp"]
+radius = 97.0052
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n3270"]
+radius = 37.0135
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0eb6f"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5w5ll"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_k7eym")
+ritual_interval = 15.0
+ritual_scene = ExtResource("2_tfcqa")
+death_prefab = ExtResource("2_wvdad")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -29)
@@ -175,7 +277,6 @@ hframes = 6
 vframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -29)
 shape = SubResource("CapsuleShape2D_huqf2")
 
@@ -184,3 +285,28 @@ libraries = {
 "": SubResource("AnimationLibrary_qyru5")
 }
 autoplay = "idle"
+
+[node name="SwordArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwordArea"]
+position = Vector2(0, -29)
+shape = SubResource("CircleShape2D_blepp")
+debug_color = Color(0.847059, 0.317647, 0.517647, 0)
+
+[node name="HitboxArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea"]
+position = Vector2(1, -29)
+shape = SubResource("CircleShape2D_n3270")
+debug_color = Color(0.94902, 0.211765, 0.168627, 0)
+
+[node name="HealthProgressBar" type="ProgressBar" parent="."]
+offset_left = -49.0
+offset_top = 16.0
+offset_right = 47.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxFlat_0eb6f")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5w5ll")
+value = 75.0
+rounded = true
+show_percentage = false
