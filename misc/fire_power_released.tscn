@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://duxkm1pu5mofx"]
+
+[ext_resource type="Texture2D" uid="uid://ceugnfe21jts2" path="res://addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="1_nycq3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1yooj"]
+texture = ExtResource("1_nycq3")
+texture_margin_left = 32.0
+texture_margin_top = 16.0
+texture_margin_right = 32.0
+texture_margin_bottom = 48.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(32, 48, 128, 128)
+
+[sub_resource type="SystemFont" id="SystemFont_kub8u"]
+font_names = PackedStringArray("Rockwell")
+font_weight = 999
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_sguyq"]
+font = SubResource("SystemFont_kub8u")
+font_size = 24
+font_color = Color(0, 0, 0, 0.764706)
+
+[node name="FirePowerReleased" type="CanvasLayer"]
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.741176)
+
+[node name="BottomPanel" type="Panel" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -329.5
+offset_top = -111.0
+offset_right = 329.5
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_1yooj")
+
+[node name="Label" type="Label" parent="Background/BottomPanel"]
+layout_mode = 2
+offset_left = 48.0
+offset_top = 30.0
+offset_right = 781.0
+offset_bottom = 91.0
+scale = Vector2(0.748292, 2.10553)
+text = "You have received the blessing of the Dragon's fire!
+Press Q to unleash the fire on your enemies"
+label_settings = SubResource("LabelSettings_sguyq")
+horizontal_alignment = 1
+vertical_alignment = 2

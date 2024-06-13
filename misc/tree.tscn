@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://didbeoa0xjua"]
+
+[ext_resource type="Texture2D" uid="uid://biw24lanj2bo0" path="res://addons/Tiny Swords/Resources/Trees/Tree.png" id="1_xj1pt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o2u64"]
+radius = 18.0278
+
+[node name="Tree" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -70)
+texture = ExtResource("1_xj1pt")
+region_enabled = true
+region_rect = Rect2(192, 0, 192, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_o2u64")

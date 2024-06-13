@@ -1,9 +1,18 @@
-[gd_scene load_steps=20 format=3 uid="uid://ch3ptsipbsp01"]
+[gd_scene load_steps=29 format=3 uid="uid://ch3ptsipbsp01"]
 
 [ext_resource type="Texture2D" uid="uid://7lwc5rf77lt3" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_bk30x"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_k7eym"]
 [ext_resource type="PackedScene" uid="uid://dfobr8sv5w8pi" path="res://misc/ritual.tscn" id="2_tfcqa"]
 [ext_resource type="PackedScene" uid="uid://by5xvkfh28s2t" path="res://misc/big_skull.tscn" id="2_wvdad"]
+[ext_resource type="PackedScene" uid="uid://bfshru0gqkd6a" path="res://misc/fire_explosion.tscn" id="3_bjjnd"]
+[ext_resource type="PackedScene" uid="uid://duxkm1pu5mofx" path="res://misc/fire_power_released.tscn" id="4_itt8k"]
+[ext_resource type="AudioStream" uid="uid://damfjfr6g453c" path="res://addons/sounds/724716__greyfeather__sword-slash-energy-wave.wav" id="7_oxw8i"]
+[ext_resource type="AudioStream" uid="uid://0gbnixwqx8xw" path="res://addons/sounds/614724__newlocknew__fast-fire-flare-whoosh-16lrs.wav" id="8_2ibv8"]
+[ext_resource type="AudioStream" uid="uid://da2b2xufslnfk" path="res://addons/sounds/689133__arcana23__magic-shimmer-spell.wav" id="9_5gco6"]
+[ext_resource type="AudioStream" uid="uid://bkgqkb67a5qxo" path="res://addons/sounds/90164__snaginneb__gruntsound.wav" id="11_fuep5"]
+[ext_resource type="AudioStream" uid="uid://t6k7qkkoqeju" path="res://addons/sounds/729195__techspiredminds__achievement-gained-braaam.wav" id="11_vy38s"]
+[ext_resource type="AudioStream" uid="uid://uj5ikp72gkrd" path="res://addons/sounds/276149__littlerobotsoundfactory__coins_single_15.wav" id="12_yj8sj"]
+[ext_resource type="AudioStream" uid="uid://cp5l2bwr83j4o" path="res://addons/sounds/654251__strechy__item-pickup-sound.ogg" id="13_50mrt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_huqf2"]
 radius = 17.0
@@ -268,6 +277,8 @@ bg_color = Color(1, 0, 0, 1)
 script = ExtResource("1_k7eym")
 ritual_interval = 15.0
 ritual_scene = ExtResource("2_tfcqa")
+fire_attack_scene = ExtResource("3_bjjnd")
+fire_attack_released = ExtResource("4_itt8k")
 death_prefab = ExtResource("2_wvdad")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -310,3 +321,25 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_5w5ll")
 value = 75.0
 rounded = true
 show_percentage = false
+
+[node name="SoundAttack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_oxw8i")
+
+[node name="SoundFireAttack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_2ibv8")
+
+[node name="SoundRitual" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_5gco6")
+
+[node name="SoundPain" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -29)
+stream = ExtResource("11_fuep5")
+
+[node name="SoundUnlockedFire" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_vy38s")
+
+[node name="SoundGetCoin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_yj8sj")
+
+[node name="SoundHeal" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_50mrt")
