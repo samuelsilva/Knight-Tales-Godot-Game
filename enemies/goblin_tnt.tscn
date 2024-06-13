@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://dp5rjp1atonun"]
+[gd_scene load_steps=14 format=3 uid="uid://dp5rjp1atonun"]
 
 [ext_resource type="Script" path="res://enemies/enemies.gd" id="1_oks32"]
 [ext_resource type="PackedScene" uid="uid://h6d8xqtb4ndf" path="res://misc/skull.tscn" id="2_8q6qm"]
+[ext_resource type="PackedScene" uid="uid://cpd3g32p5yymt" path="res://misc/gold.tscn" id="3_c1h40"]
 [ext_resource type="Texture2D" uid="uid://mcowv0dsx5v5" path="res://addons/Tiny Swords/Factions/Goblins/Troops/TNT/Red/TNT_Red.png" id="3_t1cxs"]
 [ext_resource type="Script" path="res://enemies/behaviors/follow_player.gd" id="4_g2g38"]
 
@@ -64,6 +65,9 @@ motion_mode = 1
 script = ExtResource("1_oks32")
 health = 8
 death_prefab = ExtResource("2_8q6qm")
+drop_chance = 0.25
+drop_items = Array[PackedScene]([ExtResource("3_c1h40")])
+drop_chances = Array[float]([0.4])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2, -32)

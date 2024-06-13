@@ -14,6 +14,9 @@ func _ready():
 
 # extender a física do jogo
 func _physics_process(delta):
+# Ignorar GameOver
+	if GameManager.is_game_over: return
+	
 	# Calcular direção
 	var player_position = GameManager.player_position #posição inicial para testes
 	var difference = player_position - enemy.position

@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4oj6j4etvynw"]
+[gd_scene load_steps=14 format=3 uid="uid://b4oj6j4etvynw"]
 
 [ext_resource type="Script" path="res://enemies/enemies.gd" id="1_dln4o"]
 [ext_resource type="PackedScene" uid="uid://h6d8xqtb4ndf" path="res://misc/skull.tscn" id="2_7e5fa"]
+[ext_resource type="PackedScene" uid="uid://knux5i7w7m5" path="res://misc/meat.tscn" id="3_27a0w"]
 [ext_resource type="Texture2D" uid="uid://b1wjja47r7ue2" path="res://addons/Tiny Swords/Resources/Sheep/HappySheep_Bouncing.png" id="3_n6g1q"]
 [ext_resource type="Script" path="res://enemies/behaviors/follow_player.gd" id="4_exxju"]
 
@@ -64,6 +65,9 @@ motion_mode = 1
 script = ExtResource("1_dln4o")
 health = 1
 death_prefab = ExtResource("2_7e5fa")
+drop_chance = 0.85
+drop_items = Array[PackedScene]([ExtResource("3_27a0w")])
+drop_chances = Array[float]([0.85])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -17)

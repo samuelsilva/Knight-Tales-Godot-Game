@@ -1,9 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://bhlk0f0m1gto7"]
+[gd_scene load_steps=16 format=3 uid="uid://bhlk0f0m1gto7"]
 
 [ext_resource type="Script" path="res://enemies/enemies.gd" id="1_0khli"]
 [ext_resource type="PackedScene" uid="uid://h6d8xqtb4ndf" path="res://misc/skull.tscn" id="2_osr26"]
+[ext_resource type="PackedScene" uid="uid://cpd3g32p5yymt" path="res://misc/gold.tscn" id="3_whctu"]
 [ext_resource type="Texture2D" uid="uid://blxqwmu4hkd0s" path="res://addons/Tiny Swords/Factions/Goblins/Troops/Torch/Red/Torch_Red.png" id="3_xcn4p"]
 [ext_resource type="Script" path="res://enemies/behaviors/follow_player.gd" id="4_0a574"]
+[ext_resource type="PackedScene" uid="uid://knux5i7w7m5" path="res://misc/meat.tscn" id="4_ag12u"]
+[ext_resource type="PackedScene" uid="uid://dxsxflsnluq21" path="res://misc/golden_meat.tscn" id="5_ckkml"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vxsq6"]
 atlas = ExtResource("3_xcn4p")
@@ -63,8 +66,10 @@ height = 72.0
 scale = Vector2(2, 2)
 motion_mode = 1
 script = ExtResource("1_0khli")
-health = 20
 death_prefab = ExtResource("2_osr26")
+drop_chance = 0.3
+drop_items = Array[PackedScene]([ExtResource("3_whctu"), ExtResource("4_ag12u"), ExtResource("5_ckkml")])
+drop_chances = Array[float]([0.35, 0.35, 0.3])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -32)
