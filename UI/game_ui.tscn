@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1bvfdvbbh4td"]
+[gd_scene load_steps=11 format=3 uid="uid://b1bvfdvbbh4td"]
 
 [ext_resource type="Texture2D" uid="uid://ceugnfe21jts2" path="res://addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="1_gks46"]
 [ext_resource type="Script" path="res://UI/game_ui.gd" id="1_hec82"]
 [ext_resource type="Texture2D" uid="uid://y6uuj1asem0c" path="res://addons/Tiny Swords/Resources/Resources/M_Idle_(NoShadow).png" id="3_7gc7b"]
+[ext_resource type="Texture2D" uid="uid://k6uyq770g1wc" path="res://addons/Tiny Swords/Resources/Resources/G_Idle_(NoShadow).png" id="4_d5pqg"]
+[ext_resource type="Texture2D" uid="uid://vjhxvxkpkpuo" path="res://addons/Effect and Bullet 16x16/Fire Effect and Bullet 16x16.png" id="5_5hncx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ww2df"]
 texture = ExtResource("1_gks46")
@@ -21,6 +23,14 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5okfw"]
 atlas = ExtResource("3_7gc7b")
 region = Rect2(32, 48, 72, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8grn"]
+atlas = ExtResource("4_d5pqg")
+region = Rect2(32, 32, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_woptx"]
+atlas = ExtResource("5_5hncx")
+region = Rect2(176, 160, 16, 32)
 
 [node name="GameUI" type="CanvasLayer"]
 script = ExtResource("1_hec82")
@@ -43,7 +53,7 @@ horizontal_alignment = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -419.0
+offset_left = -330.0
 offset_top = 25.0
 offset_right = -16.0
 offset_bottom = 110.0
@@ -56,15 +66,17 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -255.0
-offset_top = -2.0
-offset_right = -118.0
-offset_bottom = 32.0
+offset_left = -108.0
+offset_top = -3.0
+offset_right = -61.0
+offset_bottom = 31.0
 grow_horizontal = 0
 scale = Vector2(1.59807, 1.59807)
-text = "20.000 Gold
+text = "300
 "
 label_settings = SubResource("LabelSettings_ycd3v")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MeatLabel" type="Label" parent="Panel"]
 unique_name_in_owner = true
@@ -72,10 +84,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -324.0
-offset_top = -4.0
-offset_right = -295.0
-offset_bottom = 30.0
+offset_left = -223.0
+offset_top = -2.0
+offset_right = -194.0
+offset_bottom = 32.0
 grow_horizontal = 0
 scale = Vector2(1.6368, 1.6368)
 text = "50"
@@ -89,3 +101,46 @@ offset_right = 101.0
 offset_bottom = 75.0
 scale = Vector2(0.7, 0.7)
 texture = SubResource("AtlasTexture_5okfw")
+
+[node name="TextureRect2" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = -7.0
+offset_right = 217.0
+offset_bottom = 65.0
+scale = Vector2(0.7, 0.7)
+texture = SubResource("AtlasTexture_e8grn")
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 27.0
+offset_top = 29.0
+offset_right = 284.0
+offset_bottom = 114.0
+scale = Vector2(0.586991, 0.934952)
+theme_override_styles/panel = SubResource("StyleBoxTexture_ww2df")
+
+[node name="TextureRect" type="TextureRect" parent="Panel2"]
+layout_mode = 0
+offset_left = 63.0334
+offset_top = 1.06957
+offset_right = 103.033
+offset_bottom = 41.0696
+texture = SubResource("AtlasTexture_woptx")
+
+[node name="FireLabel" type="Label" parent="Panel2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -110.49
+offset_top = 1.06958
+offset_right = -63.4901
+offset_bottom = 35.0696
+grow_horizontal = 0
+scale = Vector2(1.59807, 1.59807)
+text = "300
+"
+label_settings = SubResource("LabelSettings_ycd3v")
+horizontal_alignment = 1
+vertical_alignment = 1
